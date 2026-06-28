@@ -1,18 +1,116 @@
 <!DOCTYPE html>
 <html>
 
-  <body style="background-color: red">
-    
-    <h1>Welcome to my OS</h1>
+  <head>
 
-    <h2>Introduction</h2>
+    <script type="module" src="windows&icons.js"></script>
 
-    <p>Hello world!</p>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <img src="cosmicOSplaceholder.jpg" />
+    <body style="background-image: linear-gradient(rgba(127.5, 127.5, 127.5, 0.4), rgba(127.5, 127.5, 127.5, 0.4)), url(./cosmicOSplaceholder.jpg); background-size: cover; height: 100vh; background-blend-mode: saturation; overflow: hidden; font-family: Helvetica">
 
-    <a href="https://www.instagram.com/starthackclub/">Instagram</a>
+      <div id="bottom" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; display: flex; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.25); color: #fff; justify-content: space-between">
+        
+        <p class="selected" id="welcomeopen" style="margin-left: 16px; font-weight: bold; background-color: rgba(255, 255, 255, 0.125); padding: 4px 12px; border-radius: 16px">
+          
+          CosmicOS
 
-  </body>
+        </p>
+
+        <p id="timeElement"
+          
+          style="margin-right: 16px; font-weight: bold; background-color: rgba(255, 255, 255, 0.125); padding: 4px 12px; border-radius: 16px">
+          
+          Time
+
+        </p>
+
+      </div>
+
+      <div id="desktopApps" style="padding-top: 16px; padding-left: 16px;">
+
+          <div class="selected" id="calculatoropen" style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
+            
+            <img src="calculatoricon.png" style="width: 64px; height: 64px; border-radius: 16px">
+
+            <p style="margin: 0px; color: white">Calculator</p>
+          </div>
+
+      </div>
+
+      <div class="window" id="welcome" style="top: calc(50% - 90px); left: calc(50% - 180px); ">
+
+        <div class="windowheader" id="welcomeheader">
+          
+          <p class="headertext">Welcome</p>
+
+          <div class="closebutton" id="welcomeclose"></div>
+
+        </div>
+      
+        <div style="background-color: #fff; border-radius: 12px; width: 360px; padding: 16px;">
+        
+          <h1 style="margin: 4px;">CosmicOS</h1>
+        
+          <p style="margin: 0px;">
+          
+            <dfn>CosmicOS</dfn> is a space-themed OS with a bunch of features planned. Stay tuned for more!
+          
+          </p>
+      
+        </div>
+
+      </div>
+
+      <div class="window" id="calculator" style="display: none; top: calc(50% - 90px); left: calc(50% - 180px); ">
+
+        <div class="windowheader" id="calculatorheader">
+          
+          <p class="headertext">Calculator</p>
+
+          <div class="closebutton" id="calculatorclose"></div>
+
+        </div>
+      
+        <div style="background-color: #fff; border-radius: 12px; width: 360px; height: 480px; padding: 16px;">
+          <div class="output">
+            <pre id="expression"></pre>
+            <pre id="result">0</pre>
+          </div>
+
+          <div class="input">
+            <button class="button" onclick="pressNumber(this)">1</button>
+            <button class="button" onclick="pressNumber(this)">2</button>
+            <button class="button" onclick="pressNumber(this)">3</button>
+            <button class="button" onclick="pressOperator(this)">/</button>
+            <button class="button" onclick="pressNumber(this)">4</button>
+            <button class="button" onclick="pressNumber(this)">5</button>
+            <button class="button" onclick="pressNumber(this)">6</button>
+            <button class="button" onclick="pressOperator(this)">*</button>
+            <button class="button" onclick="pressNumber(this)">7</button>
+            <button class="button" onclick="pressNumber(this)">8</button>
+            <button class="button" onclick="pressNumber(this)">9</button>
+            <button class="button" onclick="pressOperator(this)">-</button>
+            <button class="button" onclick="pressNumber(this)">0</button>
+            <button class="button" onclick="pressBracket(this)">(</button>
+            <button class="button" onclick="pressBracket(this)">)</button>
+            <button class="button" onclick="pressOperator(this)">+</button>
+            <button class="button" onclick="pressDecimal()">.</button>
+            <button class="button" onclick="pressEqual()">=</button>
+            <button class="button" onclick="regClear()">DEL</button>
+            <button class="button" onclick="clearAll()">CLEAR</button>
+          </div>
+
+        </div>
+      
+      </div>
+
+    </body>
+
+    <script src="calculator.js"></script>
+    <script src="windows&icons.js"></script>
+    <script src="time&calendar.js"></script>
+
+  </head>
 
 </html>
