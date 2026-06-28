@@ -1,6 +1,13 @@
 var selectedIcon = undefined
 var biggestIndex = 1
 var bottomBar = document.querySelector("#bottom")
+var rect;
+var viewport = {
+  bottom: 0,
+  left: 0,
+  right: 0,
+  top: 0
+}
 
 dragElement(document.querySelector("#welcome"));
 dragElement(document.querySelector("#calculator"));
@@ -23,6 +30,12 @@ function dragElement(element) {
     initialX = e.clientX;
     initialY = e.clientY;
 
+    rect = element.getBoundingClientRect();
+    viewport.bottom = window.innerHeight;
+    viewport.left = 0;
+    viewport.right = window.innerWidth;
+    viewport.top = 0;
+
     document.onmouseup = stopDragging;
     document.onmousemove = onDrag;
   }
@@ -36,8 +49,15 @@ function dragElement(element) {
     initialX = e.clientX;
     initialY = e.clientY;
 
-    element.style.top = (element.offsetTop - currentY) + "px";
-    element.style.left = (element.offsetLeft - currentX) + "px";
+    var newLeft = element.offsetLeft - currentX;
+    var newTop = element.offsetTop - currentY;
+
+    if (newLeft < viewport.left || newTop < viewport.top || newLeft + rect.width > viewport.right || newTop + rect.height + 64 > viewport.bottom) {
+
+    } else {
+      element.style.top = (element.offsetTop - currentY) + "px";
+      element.style.left = (element.offsetLeft - currentX) + "px";
+    }
   }
 
   function stopDragging() {

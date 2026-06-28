@@ -7,9 +7,12 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <body style="background-image: linear-gradient(rgba(127.5, 127.5, 127.5, 0.4), rgba(127.5, 127.5, 127.5, 0.4)), url(./cosmicOSplaceholder.jpg); background-size: cover; height: 100vh; background-blend-mode: saturation; overflow: hidden; font-family: Helvetica">
+    <body class="container" style="font-family: Helvetica">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
 
-      <div id="bottom" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; display: flex; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.25); color: #fff; justify-content: space-between">
+      <div id="bottom" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 60px; display: flex; backdrop-filter: blur(10px); background-color: rgba(54, 0, 129, 0.2); color: #fff; justify-content: space-between">
         
         <p class="selected" id="welcomeopen" style="margin-left: 16px; font-weight: bold; background-color: rgba(255, 255, 255, 0.125); padding: 4px 12px; border-radius: 16px">
           
@@ -17,9 +20,7 @@
 
         </p>
 
-        <p id="timeElement"
-          
-          style="margin-right: 16px; font-weight: bold; background-color: rgba(255, 255, 255, 0.125); padding: 4px 12px; border-radius: 16px">
+        <p id="timeElement" style="margin-right: 16px; font-weight: bold; background-color: rgba(255, 255, 255, 0.125); padding: 4px 12px; border-radius: 16px">
           
           Time
 
@@ -31,7 +32,7 @@
 
           <div class="selected" id="calculatoropen" style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
             
-            <img src="calculatoricon.png" style="width: 64px; height: 64px; border-radius: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="64" height="64" viewBox="0 0 24 24" style="color: rgb(255, 255, 255);"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 21V3a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 7h4m-4 8.5h4m-4 3h4M5 7h2m2 0H7m0 0V5m0 2v2m-1.414 9.414L7 17m1.415-1.414L7 17m0 0l-1.414-1.414M7 17l1.415 1.414"></path></g></svg>
 
             <p style="margin: 0px; color: white">Calculator</p>
           </div>
